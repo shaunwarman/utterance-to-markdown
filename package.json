@@ -1,0 +1,22 @@
+{
+  "name": "utterance-to-markdown",
+  "version": "0.0.1",
+  "description": "A simple utterance file to markdown text parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/tape/bin/tape ./test/test-*.js"
+  },
+  "keywords": [
+    "alexa",
+    "markdown",
+    "utterance"
+  ],
+  "author": "Shaun Warman",
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "json2md": "^1.5.5"
+  }
+}
