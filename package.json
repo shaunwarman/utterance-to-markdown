@@ -4,7 +4,7 @@
   "description": "A simple utterance file to markdown text parser",
   "main": "index.js",
   "scripts": {
-    "docs": "./bin/u2m \"./test/fixtures/utterance.txt\"",
+    "docs": "./bin/u2m ./test/fixtures/utterance.txt",
     "test": "./node_modules/tape/bin/tape ./test/test-*.js"
   },
   "keywords": [

@@ -2,16 +2,14 @@ const FS = require('fs');
 const Path = require('path');
 const Marker = require('json2md');
 
-const filepath = process.argv.slice(2);
-
-const parse = (path) => {
+const parse = (path, callback) => {
   if (typeof path !== 'string') {
     throw new Error('path must be a string');
   }
 
   _read(path, (err, utterance) => {
     if (err) throw err;
-    _toMarkdown(_format(utterance));
+    _toMarkdown(_format(utterance), callback);
   });
 };
 
@@ -51,12 +49,10 @@ const _toMarkdown = (utterances, callback) => {
 
   FS.writeFile('UTTERANCES.md', markdown, (err) => {
     if (!err) {
-      console.log(markdown);
+      return callback(null, markdown);
     }
   });
 }
-
-parse(filepath);
 
 module.exports = {
   parse
